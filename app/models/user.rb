@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
  #    find_by_provider_and_uid(auth["provider"], auth["uid"]) || create_with_omniauth(auth)
  #  end
 	def self.create_with_omniauth(auth)
+		location = auth['info']['location'] || ''
+		user_location = Geocoder.coordinates(location)
 		create! do |user|
 			user.provider = auth['provider']
 			user.uid = auth['uid'] 
