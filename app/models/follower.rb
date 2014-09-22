@@ -1,7 +1,7 @@
 class Follower < ActiveRecord::Base
 	belongs_to :user
 
-	def self.follower_data(location_value, user_id, follower,)
+	def self.follower_data(location_value, user_id, follower)
 		self.create_with(
 			name: follower.name,
 			avatar: follower.profile_image_url,
