@@ -29,9 +29,6 @@ gem 'spring',        group: :development
 gem 'figaro'
 gem 'geocoder'
 gem 'foundation-rails'
-
-# gem 'omniauth-identity'
-# gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter', github: 'arunagw/omniauth-twitter'
 gem 'omniauth-facebook', github: 'mkdynamic/omniauth-facebook'
