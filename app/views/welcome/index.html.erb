@@ -1,2 +1,90 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="bg-img">
+
+	<%= image_tag 'http://www.kgryte.com/blog/wp-content/uploads/2013/05/screenshot_3_720x403px.jpg'%>
+	<div class=" row tag-container">
+		<h1 id="tag-line">Map your followers</h1>
+		<h4 id="tag-line-two">Sign up to see where your followers are today</h4>
+
+	</div>
+</div>
+
+<div class='welcome-content-container'>
+	
+	<div class="row ">
+		<div class="large-12 columns welcome-content-header">
+			<h1>About Map me</h1>
+			<hr>
+		</div>
+		<div class="large-12 large-centered columns welcome-content-parag">
+
+			<div class="large-3 columns">
+				
+				<i class="fa fa-globe"></i>
+			</div>
+			<div class="large-9 columns">
+				
+				<p>
+					Vei huulilla oma tarkoita pystyssa karahtaa jaanytta saa. Tietamatta nyt han nykyisista naamallasi loi ota. Tai isa teki otti ukko ehka lie koli raha. Vai paristi onnensa ela laskiko kai. Kun semmoiseen tietamatta kuitenkaan han tai. Oma han juon ihan emma maha tai. Et ai myrskysi papattaa on vallassa koyhilta loydetty antakoon ne. Teistakin en se ennenkuin vavahtaen jatkaessa osaamatta et. Enemmankin nuottikota ai he kulkuneuvo. Ei ja te kanssa viinaa pitkin. 
+				</p>
+			</div>
+			<hr>
+		</div>
+
+		<div class="large-10 large-centered columns ">
+
+			<div class="row">
+  <div class="large-10 large-centered columns">
+    <div class="form-containers">
+
+    <div class="form-header-container">
+      <div class= "large-12 columns form-header">
+        <h1 class="text-center">Sign up</h1>
+      </div>
+    </div>
+
+      
+
+
+    <div class="con-tainer">
+        <div class="row">
+          <div class="small-12 small-centered colmuns">
+            <div class="contact-container">
+
+              <div class="container-left">
+                <ul class="list">
+                  <li class="contact-left ">
+                    <%#= link_to "Sign in with google +", user_omniauth_authorize_path(:google_oauth2), :class => 'button [tiny small large] goog'%>
+                    <%= link_to 'sign up with google +', "/auth/google_oauth2", :class => 'button [tiny small large] goog'%>
+                  </li>
+                  <li class="contact-left ">
+                    <%#= link_to "Sign in with twitter", user_omniauth_authorize_path(:twitter), :class => 'button [tiny small large] twit'%>
+                    <%= link_to 'sign up with twitter', "/auth/twitter", :class => 'button [tiny small large] twit' %>
+                  </li>
+                 
+                </ul>
+              </div>
+
+              <div class="container-right">
+                <ul class="list">
+                  <li class="contact-left ">
+                    <%#= link_to "Sign in with google +", user_omniauth_authorize_path(:google_oauth2), :class => 'button [tiny small large] goog'%>
+                    <%= link_to 'sign up with Instagram', "/auth/instagram", :class => 'button [tiny small large] insta'%>
+                  </li>
+                  <li class="contact-left ">
+                    <%#= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), :class => 'button [tiny small large] faceb' %>
+                    <%= link_to 'sign up with facebook', "/auth/facebook", :class => 'button [tiny small large] faceb'%>
+                    <div ></div>
+                </ul>
+              </div>
+              <div class="clearfix"></div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+		</div>
+</div>
+	
+</div>
