@@ -1,3 +1,112 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#app-logo {
+	font-family: ubuntu;
+}
+
+div.fixed {
+
+	z-index: 150;
+}
+
+nav.top-bar {
+	background-color: white;
+	float: none !important;
+	box-shadow: 3px 3px 3px #888888;
+}
+
+ul.title-area {
+		margin-left: 450px;
+		text-align: center;
+		float: none !important;
+
+}
+
+li.name {
+
+	a {
+		color: black !important;
+		font-size: 24px;
+		display: inline !important;
+		font-weight: 300;
+		font-style: italic;
+	}
+}
+/*styling for content on the home page*/
+.welcome-content-container {
+	background-color: white;
+	z-index: 99;
+	position: relative;
+	top:580px;
+	padding-top: 100px;
+	padding-bottom: 40px;
+	bottom: 0;
+
+	.welcome-content-header {
+		h1 {
+			font-family: ubuntu;
+		}
+	}
+
+
+	.welcome-content-parag {
+		p{
+			font-family: ubuntu;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+			.fa-globe {
+				font-size: 180px !important;
+				margin-top: 30px;
+				color: #203DAB;
+				margin-bottom: 50px;
+
+			}
+	}
+}
+/*styling for the footer*/
+
+
+/*styling for the background img*/
+
+.bg-img {
+
+	img {
+		-webkit-filter: grayscale(.3) opacity(0.8);
+		position: fixed;
+		z-index: 50;
+		width: 100%;
+		background: -webkit-gradient(linear color-stop(0%,rgba(255,255,255,0.4)), color-stop(100%,rgba(255,255,255,0.7)));
+		width: 100%;
+		height: 600px;
+		background-repeat: no-repeat;
+		
+	}
+	/*background-color: black;*/
+ /*background-image: url('http://www.kgryte.com/blog/wp-content/uploads/2013/05/screenshot_3_720x403px.jpg');*/
+	.tag-container {
+	}
+
+	#tag-line-two {
+		left:30%;
+		top: 270px;
+		z-index: 99;
+		position: absolute;
+		color: rgba(0, 0, 0, 0.8);
+		bottom: 30px;
+		font-family: ubuntu;
+		/*margin: 0 auto;*/
+		font-size: 25px;
+	}
+
+	#tag-line {
+		left:30%;
+		top: 170px;
+		z-index: 99;
+		position: absolute;
+		color: rgba(0, 0, 0, 0.8);
+		bottom: 30px;
+		font-family: ubuntu;
+		/*margin: 0 auto;*/
+		font-size: 60px;
+
+	}
+}

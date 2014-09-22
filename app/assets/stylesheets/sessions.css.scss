@@ -1,3 +1,146 @@
-// Place all the styles related to the sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.form-header {
+	margin-top: 30px;
+
+	h1{
+
+		font-family: ubuntu;
+	}
+}
+
+/*styling for the form and the */
+.contact-container {
+	width:100%;
+	margin: 40px auto 0 ;
+	/*margin-bottom: 10px;*/
+	margin-top: 130px;
+}
+
+.container-left {
+	/*padding-top: 30px;*/
+	padding-bottom: 20px;
+	margin-left: 30px;
+	width:45%;
+	text-align: right;
+	/*border-right: 1px solid #eee;*/
+	padding-right: 17px;
+	float: left;
+	
+
+	height: 200px;
+
+
+	a {
+		font-family: ubuntu;
+	}
+}
+
+.container-right {
+	/*padding-top: 12px;*/
+	border-left: 1px solid black;
+	width:40%;
+	text-align: left;
+	float: left;
+	height: 135px;
+	padding-bottom: 0px;
+
+	
+	a {
+		font-family: ubuntu;
+	}
+}
+/*the code below deals with the left and right li*/
+
+ul.list {
+	margin-right: 0;
+}
+.contact-left {
+	padding-top: 5px;
+	padding-bottom: 0px;
+	display: block;
+	font-size: 20px;
+}
+
+.contact-right {
+	padding-top: 30px;
+	padding-bottom: 25px;
+	display: block;
+	font-size: 17px;
+}
+
+
+.clearfix {
+		clear:both;
+	}
+
+
+	/*styling for the form */
+.form-containers {
+	margin-top: 80px;
+	margin-bottom: 70px;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+	.site-forms input {
+		border-radius: 3px;
+		font-family: ubuntu;
+		margin: 0;
+		/*margin-bottom: 30px;*/
+	}
+
+	.save-me {
+		margin-bottom: 30px;
+	}
+
+	.site-forms .actions {
+		margin-top: 33px;
+	}
+
+	.site-forms label{
+		display: none;
+}
+	/*styling for the login and sign up button*/
+
+	.save-button {
+		margin-top: 25px;
+		background-color: silver;
+		border-radius: 3px !important;
+	}
+
+	.save-button:hover {
+		background-color: silver;
+
+	}
+
+/*styling for the google twitter and facebook buttons*/
+.insta, .insta:hover {
+	border-radius: 3px;
+	font-size: 18px !important;
+	background-color: #517fa4;
+}
+.goog, .goog:hover {
+	background-color: #F22E0C;
+	border-radius: 3px;
+	font-size: 18px !important;
+	
+}
+
+.twit, .twit:hover {
+	background-color: #55acee;
+	border-radius: 3px;
+	font-size: 18px !important;
+	
+}
+
+.faceb, .faceb:hover {
+	background-color: #294BA6;
+	border-radius: 3px;
+	font-size: 18px !important;
+	
+}
+
+/*separate dstyling for map canvas*/
+
+#map-canvas {
+	height:  500px;
+	width: 700px;
+}
