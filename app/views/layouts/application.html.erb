@@ -75,7 +75,7 @@
        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
      })();
     </script>
-  <script src= 'https://api.instagram.com/oauth/authorize/?client_id=#{Figaro.env.instagram_key}&redirect_uri=http://map-me2.herokuapp.com&response_type=code' type="text/javascript"></script>
+  <script src= 'https://api.instagram.com/oauth/authorize/?client_id=#{Figaro.env.instagram_key}&redirect_uri=http://map-me2.herokuapp.com/auth/instagram/callback&response_type=code' type="text/javascript"></script>
   <script src="http://platform.twitter.com/anywhere.js?id=#{Figaro.env.consumer_key}&v=1" type="text/javascript"></script>
  
     <%= javascript_include_tag "application" %>
