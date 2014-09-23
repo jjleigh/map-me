@@ -13,6 +13,152 @@
 <% if current_user %>
   <h1 class="text-center map-header">Welcome <%= current_user.name %></h1>
   <%= link_to 'Log out', log_out_path, :class => 'button [tiny small large] logout' %>
+  
+<script>
+  var mapStyle = [
+    {
+      "featureType": "landscape",
+      "stylers": [
+        {
+          "saturation": -100
+        },
+        {
+          "lightness": 65
+        },
+        {
+          "visibility": "on"
+        }
+       ]
+    },
+    {
+      "featureType": "poi",
+      "stylers": [
+        {
+          "saturation": -100
+        },
+        {
+          "lightness": 51
+        },
+        {
+          "visibility": "simplified"
+        }
+      ]
+    },
+    {
+      "featureType": "road.highway",
+      "stylers": [
+        {
+          "saturation": -100
+        },
+        {
+          "visibility": "simplified"
+        }
+      ]
+    },
+    {
+      "featureType": "road.arterial",
+      "stylers": [
+        {
+          "saturation": -100
+        },
+        {
+          "lightness": 30
+        },
+        {
+          "visibility": "on"
+        }
+      ]
+    },
+    {
+      "featureType": "road.local",
+      "stylers": [
+        {
+          "saturation": -100
+        },
+        {
+          "lightness": 40
+        },
+        {
+          "visibility": "on"
+        }
+      ]
+    },
+    {
+      "featureType": "transit",
+      "stylers": [
+        {
+          "saturation": -100
+        },
+        {
+          "visibility": "simplified"
+        }
+      ]
+    },
+    {
+      "featureType": "administrative.province",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "water",
+      "elementType": "labels",
+      "stylers": [
+        {
+          "visibility": "on"
+        },
+        {
+          "lightness": -25
+        },
+        {
+          "saturation": -100
+        }
+      ]
+    },
+    {
+      "featureType": "water",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "hue": "#ffff00"
+        },
+        {
+          "lightness": -25
+        },
+        {
+          "saturation": -97
+        }
+      ]
+    }
+  ];
+
+  var locations = <%= raw @markers %>;
+
+  var markers = []
+
+  for (var i = 0; i < locations.length; i++) {
+    markers.push({
+      'lat': locations[i][1],
+      'lng': locations[i][2],
+       "picture": {
+        "url": locations[i][3],
+        "width":  36,
+        "height": 36
+      },
+      'infowindow': locations[i][0]
+    });
+  }
+
+  handler = Gmaps.build('Google');
+  handler.buildMap({internal: {id: 'map'}, provider: { styles: mapStyle }}, function(){
+    friendMarkers = handler.addMarkers(markers);
+    handler.bounds.extendWith(friendMarkers);
+    handler.fitMapToBounds();
+  });
+
+
   <div id="map-canvas"></div>
 <% else %>
     
