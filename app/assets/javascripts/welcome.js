@@ -30,14 +30,14 @@ function addMarkers(coords) {
 
 }
 
-// $(document).on('ready page:load', function() {
+$(document).on('ready page:load', function() {
 
-// 	if ($("#map-canvas").length) {
-// 		intializeMap();
-// 		if (Map.coords.length > 0) addMarkers(Map.coords);
-// 	}
+	if ($("#map-canvas").length) {
+		intializeMap();
+		if (Map.coords.length > 0) addMarkers(Map.coords);
+	}
 
-// });
+});
 
 // function geolocationSuccess(position){
 // 	var latitude = position.coords.latitude;
@@ -46,8 +46,6 @@ function addMarkers(coords) {
 // function geolocationError(){
 // 	console.log("there was an error");
 // }
-
-
 
 
 
