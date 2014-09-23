@@ -115,9 +115,18 @@ li.name {
 .logout, .logout:hover {
 	background-color: #3C71C4;
 	border-radius: 3px;
+	margin-left: 47%;
 	
 	a {
 		font-family: ubuntu;
 		color: white;
 	}
+}
+
+
+/*styling for the current user view*/
+
+.map-header {
+	font-family: ubuntu;
+
 }
