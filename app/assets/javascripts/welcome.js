@@ -39,13 +39,13 @@ $(document).on('ready page:load', function() {
 
 });
 
-function geolocationSuccess(position){
-	var latitude = position.coords.latitude;
-	var longitude = position.coords.longitude;
-}
-function geolocationError(){
-	console.log("there was an error");
-}
+// function geolocationSuccess(position){
+// 	var latitude = position.coords.latitude;
+// 	var longitude = position.coords.longitude;
+// }
+// function geolocationError(){
+// 	console.log("there was an error");
+// }
 
 
 
