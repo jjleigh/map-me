@@ -1,7 +1,8 @@
 var Map = {};
 Map.nearby_marker_img = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
 
-
+Map.latitude = 43.6425662;
+Map.longitude = -79.3870568;
 function intializeMap() {
 	Map.options = {
 		zoom: 14,
