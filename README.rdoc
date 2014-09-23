@@ -1,28 +1,14 @@
-== README
+Welcome to Map-me
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a rails based application which functions to map a users social media followers.
 
-Things you may want to cover:
+Heroku host: http://map-me2.herokuapp.com
 
-* Ruby version
+Functionality Highlights
 
-* System dependencies
+Maping functionality (powered by geocoder gem and google maps API)
 
-* Configuration
+3rd party user authentication (powered by gems: omniauth, omniauth-twitter, omniauth-facebook, omniauth-instagram, omniauth-google-oauth2)
 
-* Database creation
+Responsive framework (ZURB Foundation)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
