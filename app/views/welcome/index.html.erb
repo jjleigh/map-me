@@ -13,6 +13,7 @@
 <% if current_user %>
   <h1 class="text-center map-header">Welcome <%= current_user.name %></h1>
   <%= link_to 'Log out', log_out_path, :class => 'button [tiny small large] logout' %>
+  <div id="map-canvas"></div>
 <% else %>
     
     <div class="row ">
