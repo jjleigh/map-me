@@ -50,7 +50,7 @@
 function initialize() {
   var mapOptions = {
     zoom: 8,
-    center: new google.maps.LatLng(-79.4, 43.7)
+    center: new google.maps.LatLng(-43.642, 79.387)
   };
 
   var map = new google.maps.Map(document.getElementById('map-canvas'),
