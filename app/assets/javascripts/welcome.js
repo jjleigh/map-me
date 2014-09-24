@@ -47,11 +47,11 @@
 // // 	console.log("there was an error");
 // // }
 
-var map;
+var Map = {};
+var nearby_marker_img = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
 function initialize() {
-  var mapOptions = {
+  var Map.options = {
     zoom: 3,
-    // center: new google.maps.LatLng(43.642, -79.387),
     center: new google.maps.LatLng(43.642, -79.387),
     panControl: false,
     zoomControl: false,
@@ -59,6 +59,17 @@ function initialize() {
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
+
+}
+
+function addMarkers(coords){
+	coords.forEach(function(coord){
+		var myMarker = new google.maps.Marker ({
+			position: new google.maps.LatLng(coord.latitude, coord.longitude),
+			map: Map.canvas,
+			icon: Map.nearby_marker_img
+		})
+	})
 
 }
 
