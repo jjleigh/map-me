@@ -73,6 +73,13 @@ function addMarkers(coords){
 
 }
 
+$(document).on('ready page:load', function() {
+	if ($('#map-canvas').length) {
+		initializeMap();
+		if (map.coords.length > 0) addMarkers(map.coords);
+	}
+});
+
 google.maps.event.addDomListener(window, 'load', initialize);
 
 
