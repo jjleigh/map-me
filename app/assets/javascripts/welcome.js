@@ -48,7 +48,7 @@
 // // }
 
 var Map = {};
-var nearby_marker_img = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+// var nearby_marker_img = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
 function initialize() {
   var Map.options = {
     zoom: 3,
@@ -67,7 +67,7 @@ function addMarkers(coords){
 		var myMarker = new google.maps.Marker ({
 			position: new google.maps.LatLng(coord.latitude, coord.longitude),
 			map: Map.canvas,
-			icon: Map.nearby_marker_img
+			// icon: Map.nearby_marker_img
 		})
 	})
 
