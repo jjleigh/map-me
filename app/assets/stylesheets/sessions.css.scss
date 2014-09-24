@@ -146,6 +146,6 @@ ul.list {
 	margin: 0 auto;
 }
 
-#map_canvas img { 
+div#map_canvas > img { 
 	max-width: inherit !important; 
 }
