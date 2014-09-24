@@ -144,9 +144,9 @@ ul.list {
 	height:  500px;
 	width: 1200px;
 	margin: 0 auto;
-	max-width: inherit !important; 
+	max-width: none !important; 
 }
 
 div#map_canvas > img { 
-	max-width: inherit !important; 
+	max-width: none !important;
 }
