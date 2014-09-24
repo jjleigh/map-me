@@ -59,8 +59,6 @@ function initialize() {
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
-}
-
     var locations;
     var markers = [];
 
@@ -76,6 +74,8 @@ function initialize() {
         }
       });
     }
+}
+
 
     // handler = Gmaps.build('Google');
     // handler.buildMap({internal: {id: 'map'}, provider: {styles: mapStyle}}, function(){
