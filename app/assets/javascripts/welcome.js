@@ -82,7 +82,7 @@ function initialize() {
     //   followerMarkers = handler.addMarkers(markers);
     //   handler.bounds.extendWith(friendMarkers);
     //   handler.fitMaptoBounds();
-    })
+    // })
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
