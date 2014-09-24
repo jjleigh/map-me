@@ -49,8 +49,6 @@
 
 var Map = {};
 Map.showMarkers = true;
-Map.nearby_marker_img = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
-
 
 function initialize() {
   var Map.options = {
@@ -63,26 +61,30 @@ function initialize() {
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
+    // var locations;
+    // var markers = [];
 
-    if (Map.showMarkers ){
-    	var MyMarkers = new google.maps.Maker ({
-    		// position: new google.maps.LatLng(Map.latitude, Map.longitude)
-
-    	});
-    }
+    // for (var i = 0; i < locations.length; i++) {
+    //   markers.push ({
+    //     'infowindow' : locations[i][0], 
+    //     'lat':locations[i][1],
+    //     'lng':locations[i][2],
+    //     'pic': {
+    //       'url': locations[i][3],
+    //       'width': 36,
+    //       'height': 36
+    //     }
+    //   });
+    // }
 }
 
-// function addMarkers(coords) {
-// 	coords.forEach(function(coord){
-// 		var myMarker = new google .maps.Marker ({
-// 			position: new google.maps.LatLng(Map.latitude, Map.longitude),
-// 			map: Map.canvas
-// 			icon: Map.nearby_marker_img
-// 		})
-// 	})
-// }
 
-
+    // handler = Gmaps.build('Google');
+    // handler.buildMap({internal: {id: 'map'}, provider: {styles: mapStyle}}, function(){
+    //   followerMarkers = handler.addMarkers(markers);
+    //   handler.bounds.extendWith(friendMarkers);
+    //   handler.fitMaptoBounds();
+    // })
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
