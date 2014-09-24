@@ -4,7 +4,7 @@
 // Map.latitude = 43.6425662;
 // Map.longitude = -79.3870568;
 // function intializeMap() {
-	// Map.options = {
+// 	Map.options = {
 // 		zoom: 14,
 // 		center: new google.maps.LatLng(Map.longitude, Map.latitude),
 // 		mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -47,11 +47,9 @@
 // // 	console.log("there was an error");
 // // }
 
-var Map = {};
-Map.showMarkers = true;
-
+var map;
 function initialize() {
-  var Map.options = {
+  var mapOptions = {
     zoom: 3,
     // center: new google.maps.LatLng(43.642, -79.387),
     center: new google.maps.LatLng(43.642, -79.387),
