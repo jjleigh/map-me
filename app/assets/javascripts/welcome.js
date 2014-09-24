@@ -36,12 +36,12 @@ function initialize() {
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
 
-    if (Map.showMarkers ){
-    	var MyMarkers = new google.maps.Maker ({
-    		position: new google.maps.LatLng(Map.latitude, Map.longitude),
-    		map: Map.canvas
-    	});
-    }
+    // if (Map.showMarkers ){
+    // 	var MyMarkers = new google.maps.Maker ({
+    // 		position: new google.maps.LatLng(Map.latitude, Map.longitude),
+    // 		map: Map.canvas
+    // 	});
+    // }
 }
 
 // function addMarkers(coords) {
