@@ -51,6 +51,7 @@ var map;
 function initialize() {
   var mapOptions = {
     zoom: 3,
+    // center: new google.maps.LatLng(43.642, -79.387),
     center: new google.maps.LatLng(43.642, -79.387),
     panControl: false,
     zoomControl: false,
@@ -60,14 +61,9 @@ function initialize() {
       mapOptions);
 }
 
+var follower_locations = 
+
 google.maps.event.addDomListener(window, 'load', initialize);
-
-
-
-// $('.map_canvas').on('shown',function(){      
-//    google.maps.event.trigger(map, 'resize'); 
-// });
-
 
 
 

@@ -15,6 +15,31 @@
   <%= link_to 'Log out', log_out_path, :class => 'button [tiny small large] logout' %>
   
   <div id="map-canvas"></div>
+
+  <script>
+    var locations = <%= raw @markers %>;
+    var markers = [];
+
+    for (var i = 0; i < locations.length; i++) {
+      markers.push ({
+        'infowindow' : locations[i][0] 
+        'lat':locations[i][1]
+        'lng':locations[i][2]
+        'pic': {
+          'url': locations[i][3]
+          'width': 36,
+          'height': 36
+        }
+      });
+    }
+
+    handler = Gmaps.build('Google');
+    handler.buildMap({internal: {id: 'map'}, provider: {styles: mapStyle}}, function(){
+      followerMarkers = handler.addMarkers(markers);
+      handler.bounds.extendWith(friendMarkers);
+      handler.fitMaptoBounds();
+    })
+  </script>
 <% else %>
     
     <div class="row ">
