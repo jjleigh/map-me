@@ -55,8 +55,8 @@ function initialize() {
     panControl: false,
     zoomControl: true,
     zoomControlOptions: {
-        style: google.maps.ZoomControlStyle.SMALL,
-        position: google.maps.ControlPosition.LEFT_CENTER
+        style: google.maps.ZoomControlStyle.LARGE,
+        position: google.maps.ControlPosition.RIGHT_CENTER
     },
     scaleControl: true
   };
