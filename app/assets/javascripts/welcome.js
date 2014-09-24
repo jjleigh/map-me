@@ -77,11 +77,11 @@ function initialize() {
       });
     }
 
-    handler = Gmaps.build('Google');
-    handler.buildMap({internal: {id: 'map'}, provider: {styles: mapStyle}}, function(){
-      followerMarkers = handler.addMarkers(markers);
-      handler.bounds.extendWith(friendMarkers);
-      handler.fitMaptoBounds();
+    // handler = Gmaps.build('Google');
+    // handler.buildMap({internal: {id: 'map'}, provider: {styles: mapStyle}}, function(){
+    //   followerMarkers = handler.addMarkers(markers);
+    //   handler.bounds.extendWith(friendMarkers);
+    //   handler.fitMaptoBounds();
     })
 
 google.maps.event.addDomListener(window, 'load', initialize);
