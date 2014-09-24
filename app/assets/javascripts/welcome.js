@@ -72,15 +72,15 @@ function initialize() {
     }
 }
 
-function addMarkers(coords) {
-	coords.forEach(function(coord){
-		var myMarker = new google .maps.Marker ({
-			position: new google.maps.LatLng(Map.latitude, Map.longitude),
-			map: Map.canvas
-			icon: Map.nearby_marker_img
-		})
-	})
-}
+// function addMarkers(coords) {
+// 	coords.forEach(function(coord){
+// 		var myMarker = new google .maps.Marker ({
+// 			position: new google.maps.LatLng(Map.latitude, Map.longitude),
+// 			map: Map.canvas
+// 			icon: Map.nearby_marker_img
+// 		})
+// 	})
+// }
 
 
 
