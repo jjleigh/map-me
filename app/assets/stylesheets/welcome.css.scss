@@ -71,6 +71,10 @@ li.name {
 
 	img {
 		-webkit-filter: grayscale(.3) opacity(0.8);
+		-moz-filter: grayscale(.3) opacity(0.8);
+    -ms-filter: grayscale(.3) opacity(0.8);
+    -o-filter: grayscale(.3) opacity(0.8);
+    
 		position: fixed;
 		z-index: 50;
 		width: 100%;
