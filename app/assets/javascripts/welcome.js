@@ -1,3 +1,5 @@
+
+
 // 	Map.canvas = new google.maps.Map($('#map-canvas')[0], Map.options);
 // 	if (Map.showMarkers) {
 // 		var myMarker = new google.maps.Marker ({
@@ -6,6 +8,8 @@
 // 		});
 // 	}
 // }
+
+
 
 // // function geolocationSuccess(position){
 // // 	var latitude = position.coords.latitude;
@@ -17,7 +21,7 @@
 
 var Map = {};
 Map.showMarkers = true;
-Map.nearby_marker_img = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+Map.nearby_marker_img = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
 
 
 function initialize() {
@@ -34,8 +38,8 @@ function initialize() {
 
     if (Map.showMarkers ){
     	var MyMarkers = new google.maps.Maker ({
-    		// position: new google.maps.LatLng(Map.latitude, Map.longitude)
-
+    		position: new google.maps.LatLng(Map.latitude, Map.longitude),
+    		map: Map.canvas
     	});
     }
 }
