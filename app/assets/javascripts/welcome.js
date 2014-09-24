@@ -54,12 +54,12 @@ function addMarkers(coords) {
 	})
 }
 
-$(document).on('ready page:load', function() {
-	if ($('#map-canvas').length) {
-		initializeMap();
-		if (Map.coords.length > 0) addMarkers(Map.coords);
-	}
-});
+// $(document).on('ready page:load', function() {
+// 	if ($('#map-canvas').length) {
+// 		initializeMap();
+// 		if (Map.coords.length > 0) addMarkers(Map.coords);
+// 	}
+// });
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
