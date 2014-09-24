@@ -47,10 +47,10 @@
 // // 	console.log("there was an error");
 // // }
 
-var Map = {};
+var  map;
 // var nearby_marker_img = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
 function initialize() {
-  var Map.options = {
+  var mapOptions = {
     zoom: 3,
     center: new google.maps.LatLng(43.642, -79.387),
     panControl: false,
