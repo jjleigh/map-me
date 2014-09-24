@@ -44,15 +44,15 @@ function initialize() {
     }
 }
 
-function addMarkers(coords) {
-	coords.forEach(function(coord){
-		var myMarker = new google .maps.Marker ({
-			position: new google.maps.LatLng(coord.latitude, coord.longitude),
-			map: Map.canvas,
-			icon: Map.nearby_marker_img
-		})
-	})
-}
+// function addMarkers(coords) {
+// 	coords.forEach(function(coord){
+// 		var myMarker = new google .maps.Marker ({
+// 			position: new google.maps.LatLng(coord.latitude, coord.longitude),
+// 			map: Map.canvas,
+// 			icon: Map.nearby_marker_img
+// 		})
+// 	})
+// }
 
 // $(document).on('ready page:load', function() {
 // 	if ($('#map-canvas').length) {
