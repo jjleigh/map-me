@@ -61,3 +61,13 @@ function initialize() {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+$('#map_canvas').on('shown',function(){      
+   google.maps.event.trigger(map, 'resize'); 
+});
+
+
+
+

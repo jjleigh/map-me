@@ -145,6 +145,7 @@ ul.list {
 	width: 1200px;
 	margin: 0 auto;
 	max-width: none !important; 
+	max-height: none !important;
 }
 
 #map_canvas > img { 
@@ -152,7 +153,3 @@ ul.list {
 	max-height: none !important;
 }
 
-#map_canvas > label {
-	width: auto;
-	display: inline;
-}
