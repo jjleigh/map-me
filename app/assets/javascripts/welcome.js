@@ -57,6 +57,7 @@ function initialize() {
     zoomControlOptions: {
         style: google.maps.ZoomControlStyle.LARGE,
         position: google.maps.ControlPosition.LEFT_CENTER
+    },
     scaleControl: true
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
