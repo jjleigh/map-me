@@ -66,8 +66,8 @@ function addMarkers(coords){
 	coords.forEach(function(coord){
 		var myMarker = new google.maps.Marker ({
 			position: new google.maps.LatLng(coord.latitude, coord.longitude),
-			map: Map.canvas,
-			// icon: Map.nearby_marker_img
+			map: map.canvas,
+			icon: map.nearby_marker_img
 		})
 	})
 
