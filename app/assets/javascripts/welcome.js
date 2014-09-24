@@ -66,11 +66,11 @@ function initialize() {
 
     for (var i = 0; i < locations.length; i++) {
       markers.push ({
-        'infowindow' : locations[i][0] 
-        'lat':locations[i][1]
-        'lng':locations[i][2]
+        'infowindow' : locations[i][0], 
+        'lat':locations[i][1],
+        'lng':locations[i][2],
         'pic': {
-          'url': locations[i][3]
+          'url': locations[i][3],
           'width': 36,
           'height': 36
         }
