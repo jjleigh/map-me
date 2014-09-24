@@ -49,7 +49,7 @@
 
 function initialize() {
   var mapOptions = {
-    zoom: 8,
+    zoom: 14,
     center: new google.maps.LatLng(79.387, 43.642)
   };
 
