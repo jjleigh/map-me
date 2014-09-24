@@ -61,7 +61,7 @@ function initialize() {
       mapOptions);
 }
 
-    var locations = <%= raw @markers %>;
+    var locations;
     var markers = [];
 
     for (var i = 0; i < locations.length; i++) {
