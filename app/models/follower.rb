@@ -8,7 +8,7 @@ class Follower < ActiveRecord::Base
 			location: follower.location,
 			latitude: location_value.first,
 			longitude: location_value.second,
-			user_id: current_user.id
+			user_id: user_id
 			).find_or_create_by(user_name: follower.user_name, user_id: user_id)
 		
 	end
