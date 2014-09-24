@@ -94,7 +94,7 @@
 <% end %>
 
 
-< <%= javascript_tag do%>
+<%= javascript_tag do%>
   Map.latitude = <%= @followers.each {|fol| {latitude: fol.latitude}}%>;
   Map.longitude = <%=  @followers.each {|fol| {longitude: fol.longitude}}%>;
   Map.showMarkers = true;

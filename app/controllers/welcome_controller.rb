@@ -46,7 +46,7 @@ class WelcomeController < ApplicationController
   		location_value = Geocoder.coordinates(location)
 
 	  	if location_value.present?
-	  		Follower.follower_data(f, location_value, current_user.id)
+	  		Follower.follower_data(f, location_value, user_id)
 	  	end
 	  end
 	  redirect_to root_path
