@@ -14,7 +14,6 @@ class Follower < ActiveRecord::Base
 	end
 
 	def self.marker_data(name, location, user_name)
-		"<span class='friend-info'><strong>@#{screen_name}</strong><br>#{name}<br>#{location}<span>"
-		
+		"<span class='friend-info'><strong>@#{screen_name}</strong><br>#{name}<br>#{location}<span>"	
 	end
 end
