@@ -14,6 +14,16 @@
   <h1 class="text-center map-header">Welcome <%= current_user.name %></h1>
   <%= link_to 'Log out', log_out_path, :class => 'button [tiny small large] logout' %>
   
+  <% current_user.followers.each do |follower| %>
+    <div class="follower"
+      data-user-name="<%= follower.user_name %>"
+      data-name="<%= follower.name %>"
+      data-location="<%= follower.location %>"
+      data-latitude="<%= follower.latitude %>"
+      data-longitude="<%= follower.longitude %>"
+      data-avatar="<%= follower.avatar %>"><%= follower.name %></div>
+  <% end %>
+
   <div id="map-canvas"></div>
 <% else %>
     

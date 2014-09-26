@@ -47,6 +47,8 @@
 // // 	console.log("there was an error");
 // // }
 
+$(document).ready(function() {
+
 var map;
 function initialize() {
   var mapOptions = {
@@ -61,16 +63,19 @@ function initialize() {
       mapOptions);
 }
 
-    var locations = <%= raw @markers %>;
+    // never mix ruby with javascript unless it is in the views folder...use data attributes instead and get data from DOM
+    // the marker method in the follower model does way too much - it should only return data
+    // var locations = <%= raw @markers %>;
+    var followers = $('.follower');
     var markers = [];
 
-    for (var i = 0; i < locations.length; i++) {
+    for (var i = 0; i < followers.length; i++) {
       markers.push ({
-        'infowindow' : locations[i][0] 
-        'lat':locations[i][1]
-        'lng':locations[i][2]
+        'infowindow' : "<span class='friend-info'><strong>@" + followers[i].getAttribute("data-user-name") + "</strong><br>" + followers[i].getAttribute("data-name") + "<br>" + followers[i].getAttribute("data-location") + "<span>",
+        'lat': followers[i].getAttribute("data-latitude"),
+        'lng': followers[i].getAttribute("data-longitude"),
         'pic': {
-          'url': locations[i][3]
+          'url': followers[i].getAttribute("data-avatar"),
           'width': 36,
           'height': 36
         }
@@ -84,7 +89,10 @@ function initialize() {
       handler.fitMaptoBounds();
     })
 
-google.maps.event.addDomListener(window, 'load', initialize);
+  google.maps.event.addDomListener(window, 'load', initialize);
 
 
+
+
+})
 

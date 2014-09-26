@@ -1,22 +1,20 @@
 class WelcomeController < ApplicationController
+  
   def index
-  	if current_user && current_user.followers.present?
+    if current_user && current_user.followers.present?
   		@markers = []
-
   		@followers = current_user.followers
-  		@followers.each do |f|
-  			maker_data = Follower.marker_data(f.user_name, f.location, f.name)
-  			@markers << [marker_data, f.latitude, f.longitude, f.avatar]
-  		end 
+  		# @followers.each do |f|
+  		# 	marker_data = Follower.marker_data(f.user_name, f.location, f.name)
+  		# 	@markers << [marker_data, f.latitude, f.longitude, f.avatar]
+  		# end 
   	end 
-
   end
-
 
   def follower_data
   	client = Twitter::REST::Client.new do |config|
-  		config.consumer_key = ENV['consumer_key']
-  		config.consumer_secret = ENV['consumer_secret']
+  		config.consumer_key = ENV['CONSUMER_KEY']
+  		config.consumer_secret = ENV['CONSUMER_SECRET']
   		config.access_token = current_user.oauth_token
   		config.access_token_secret = current_user.oauth_secret  	
   	end
@@ -40,13 +38,11 @@ class WelcomeController < ApplicationController
   	# end
 
   	@followers = client.followers.take(70)
-
   	@followers.each do |f|
   		location = f.location
   		location_value = Geocoder.coordinates(location)
-
 	  	if location_value.present?
-	  		Follower.follower_data(f, location_value, current_user.id)
+	  		Follower.follower_data(location_value, current_user.id, f)
 	  	end
 	  end
 	  redirect_to root_path
