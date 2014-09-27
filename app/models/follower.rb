@@ -12,8 +12,4 @@ class Follower < ActiveRecord::Base
 			).find_or_create_by(user_name: follower.user_name, user_id: user_id)
 		
 	end
-
-	# def self.marker_data(name, location, screen_name)
-	# 	"<span class='friend-info'><strong>@#{screen_name}</strong><br>#{name}<br>#{location}<span>"	
-	# end
 end

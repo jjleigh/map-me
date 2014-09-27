@@ -1,8 +1,6 @@
 class User < ActiveRecord::Base
 	 has_many :followers
-	# def self.from_omniauth(auth)
- #    find_by_provider_and_uid(auth["provider"], auth["uid"]) || create_with_omniauth(auth)
- #  end
+
 	def self.create_with_omniauth(auth)
 		location = auth['info']['location'] || ''
 		user_location = Geocoder.coordinates(location)
