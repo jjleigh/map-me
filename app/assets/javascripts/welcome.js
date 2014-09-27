@@ -47,40 +47,52 @@
 // // 	console.log("there was an error");
 // // }
 
-var  map;
-// var nearby_marker_img = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+$(document).ready(function() {
+
+var map;
 function initialize() {
   var mapOptions = {
     zoom: 3,
+    // center: new google.maps.LatLng(43.642, -79.387),
     center: new google.maps.LatLng(43.642, -79.387),
     panControl: false,
     zoomControl: false,
-    scaleControl: true
+    scaleControl: false,
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
-
 }
 
-function addMarkers(coords){
-	coords.forEach(function(coord){
-		var myMarker = new google.maps.Marker ({
-			position: new google.maps.LatLng(coord.latitude, coord.longitude),
-			map: map.canvas,
-			icon: map.nearby_marker_img
-		})
-	})
+    // never mix ruby with javascript unless it is in the views folder...use data attributes instead and get data from DOM
+    // the marker method in the follower model does way too much - it should only return data
+    // var locations = <%= raw @markers %>;
+    var followers = $('.follower');
+    var markers = [];
 
-}
+    for (var i = 0; i < followers.length; i++) {
+      markers.push ({
+        'infowindow' : "<span class='friend-info'><strong>@" + followers[i].getAttribute("data-user-name") + "</strong><br>" + followers[i].getAttribute("data-name") + "<br>" + followers[i].getAttribute("data-location") + "<span>",
+        'lat': followers[i].getAttribute("data-latitude"),
+        'lng': followers[i].getAttribute("data-longitude"),
+        'pic': {
+          'url': followers[i].getAttribute("data-avatar"),
+          'width': 36,
+          'height': 36
+        }
+      });
+    }
 
-$(document).on('ready page:load', function() {
-	if ($('#map-canvas').length) {
-		initializeMap();
-		if (map.coords.length > 0) addMarkers(map.coords);
-	}
-});
+    // handler = Gmaps.build('Google');
+    // handler.buildMap({internal: {id: 'map'}, provider: {styles: mapStyle}}, function(){
+    //   followerMarkers = handler.addMarkers(markers);
+    //   handler.bounds.extendWith(friendMarkers);
+    //   handler.fitMaptoBounds();
+    // })
 
-google.maps.event.addDomListener(window, 'load', initialize);
+  google.maps.event.addDomListener(window, 'load', initialize);
 
 
+
+
+})
 
