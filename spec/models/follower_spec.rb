@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 
-describe Followers do
+describe Follower do
 	
 
 	# association tests
