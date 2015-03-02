@@ -49,6 +49,7 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
   gem "factory_girl_rails"
   gem 'faker'
+  gem "better_errors"
 end
 
 ruby "2.1.0"
