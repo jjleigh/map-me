@@ -10,12 +10,11 @@
 
 
   <div class='welcome-content-container'>
-<% if current_user %>
-  <h1 class="text-center map-header">Welcome <%= current_user.name %></h1>
-  <%= link_to 'Log out', log_out_path, :class => 'button [tiny small large] logout' %>
-  
-  <div id="map-canvas"></div>
-<% else %>
+    <% if current_user %>
+      <h1 class="text-center map-header">Welcome <%= current_user.name %></h1>
+      <%= link_to 'Log out', log_out_path, :class => 'button [tiny small large] logout' %>
+      <div id="map-canvas"></div>
+    <% else %>
     
     <div class="row ">
       <div class="large-12 columns welcome-content-header">
@@ -40,14 +39,14 @@
       <div class="large-10 large-centered columns ">
 
         <div class="row">
-    <div class="large-10 large-centered columns">
-      <div class="form-containers">
+          <div class="large-10 large-centered columns">
+            <div class="form-containers">
 
-      <div class="form-header-container">
-        <div class= "large-12 columns form-header">
-          <h1 class="text-center">Sign up</h1>
-        </div>
-      </div>
+              <div class="form-header-container">
+                <div class= "large-12 columns form-header">
+                  <h1 class="text-center">Sign up</h1>
+                </div>
+              </div>
 
         
 
@@ -92,13 +91,5 @@
     
   </div>
 <% end %>
-
-
-<%#= javascript_tag do%>
-  <!-- Map.latitude = <%#= @followers.each {|fol| {latitude: fol.latitude}}%>; -->
-<!--   Map.longitude = <%#=  @followers.each {|fol| {longitude: fol.longitude}}%>;
-  Map.showMarkers = true;
-  Map.coords = <%#= raw @followers.map {|f| {latitude: f.latitude, longitude: f.longitude}}.to_json%>; -->
-<%# end %> 
 
 

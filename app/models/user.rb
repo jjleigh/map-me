@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	 has_many :followers
+	has_many :followers, dependent: :destroy
 
 	def self.create_with_omniauth(auth)
 		location = auth['info']['location'] || ''
@@ -16,43 +16,30 @@ class User < ActiveRecord::Base
 		end
 	end
 
-	def twitter_client
-  	@client = Twitter::REST::Client.new do |config|
-  		config.consumer_key = ENV['CONSUMER_KEY']
-  		config.consumer_secret = ENV['CONSUMER_SECRET']
-  		config.access_token = self.oauth_token
-  		config.access_token_secret = self.oauth_secret  	
-  	end		
-	end
+  def auth_client
+    if provider == "twitter"
+      @client = Twitter::REST::Client.new do |config|
+        configure_tokens(config)    
+      end 
+    end        
+  end
 
-	def get_twitter_followers
-  	client = self.twitter_client
-  	# client = Facebook::REST::Client.new do |config|
-  	# 	config.facebook_key = ENV['facebook_key']
-  	# 	config.facebook_secret = ENV['facebook_secret']
-  	# 	config.access_token = current_user.oauth_token
-  	# 	config.access_token_secret = current_user.oauth_secret  	
-  	# end
-  	# client = Instagram::REST::Client.new do |config|
-  	# 	config.instagram_key = ENV['instagram_key']
-  	# 	config.instagram_secret = ENV['instagram_secret']
-  	# 	config.access_token = current_user.oauth_token
-  	# 	config.access_token_secret = current_user.oauth_secret  	
-  	# end
-  	# client = Google_oauth2::REST::Client.new do |config|
-  	# 	config.google_plus_key = ENV['google_plus_key']
-  	# 	config.google_plus_secret = ENV['google_plus_secret']
-  	# 	config.access_token = current_user.oauth_token
-  	# 	config.access_token_secret = current_user.oauth_secret  	
-  	# end
-  	@followers = client.followers.take(70)
-  	@followers.each do |f|
-  		location = f.location
-  		location_value = Geocoder.coordinates(location)
-	  	if location_value.present?
-	  		Follower.follower_data(location_value, self.id, f)
-	  	end
-	  end
-	end
+  def configure_tokens(config)
+    config.consumer_key = ENV["#{provider.upcase}_KEY"]
+    config.consumer_secret = ENV["#{provider.upcase}_SECRET"]
+    config.access_token = self.oauth_token
+    config.access_token_secret = self.oauth_secret
+  end
 
+  def get_followers
+    client = self.auth_client
+    @followers = client.followers.take(200)
+    @followers.each do |f|
+    location = f.location
+    location_value = Geocoder.coordinates(location)
+      if location_value.present?
+       Follower.store_follower_data(location_value, self.id, f)
+      end
+    end
+  end
 end
