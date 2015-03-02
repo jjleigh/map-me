@@ -3,12 +3,9 @@
   <head>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Arimo|Ubuntu:300,400,300italic|Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <%= include_gon %>
 		<%= javascript_include_tag '//maps.googleapis.com/maps/api/js?key=#{Figaro.env.google_map_api}' %>
-    <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-      <link rel="stylesheet" href="foundation.css">
-
- 
+    <link rel="stylesheet" href="foundation.css">
     <%= stylesheet_link_tag    "application" %>
     <%#= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
@@ -16,15 +13,7 @@
 
 
   <body>
-  <script>
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src ="connect.facebook.net/en_US/all.js#xfbml=1&appId=#{Figaro.env.facebook_key}";
-    fjs.parentNode.insertBefore(js, fjs);
-    }(document, ‘script’, ‘facebook-jssdk’));
-  </script>
+  
 
 //   <script>
   // window.fbAsyncInit = function() {
@@ -44,40 +33,40 @@
   //  }(document, 'script', 'facebook-jssdk'));
 // </script>
 
-<div class="fixed">
-  <nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-      <li class="name">
+  <div class="fixed">
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+            
+          <h1 >
+            <%= link_to 'Map me', root_url, :id => 'app-logo'%>
+            <i class="fa fa-map-marker"></i>
+            <!--  -->
+          </h1>
           
-        <h1 >
-          <%= link_to 'Map me', root_url, :id => 'app-logo'%>
-          <i class="fa fa-map-marker"></i>
-          <!--  -->
-        </h1>
-        
-      </li>
-       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-    </ul>
-  </nav>
-</div>
-  <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
+        </li>
+         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+    </nav>
+  </div>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
 
-    <%= yield %>
- <script type="text/javascript">
+      <%= yield %>
+  <script type="text/javascript">
       (function() {
        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
        po.src = 'https://apis.google.com/js/client:plusone.js';
        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
      })();
-    </script>
-  <script src= 'https://api.instagram.com/oauth/authorize/?client_id=#{Figaro.env.instagram_key}&redirect_uri=http://map-me2.herokuapp.com/auth/instagram/callback&response_type=code' type="text/javascript"></script>
-  <script src="http://platform.twitter.com/anywhere.js?id=#{Figaro.env.consumer_key}&v=1" type="text/javascript"></script>
+  </script>
+  
+  <script src="http://platform.twitter.com/anywhere.js?id=#{Figaro.env.twitter_key}&v=1" type="text/javascript"></script>
  
     <%= javascript_include_tag "application" %>
   </body>
