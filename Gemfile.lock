@@ -85,6 +85,11 @@ GEM
     figaro (1.0.0)
       thor (~> 0.14)
     geocoder (1.2.5)
+    gon (5.2.3)
+      actionpack (>= 2.3.0)
+      json
+      multi_json
+      request_store (>= 1.0.5)
     google-api-client (0.7.1)
       addressable (>= 2.3.2)
       autoparse (>= 0.3.3)
@@ -195,6 +200,7 @@ GEM
     rake (10.3.2)
     rdoc (4.1.2)
       json (~> 1.4)
+    request_store (1.1.0)
     retriable (1.4.1)
     rspec-core (3.0.4)
       rspec-support (~> 3.0.0)
@@ -274,6 +280,7 @@ DEPENDENCIES
   faker
   figaro
   geocoder
+  gon
   google-api-client
   instagram
   jbuilder (~> 2.0)
