@@ -13,43 +13,23 @@
 
 
   <body>
-  
-
-//   <script>
-  // window.fbAsyncInit = function() {
-  //   FB.init({
-  //     appId      : Figaro.env.facebook_key,
-  //     xfbml      : true,
-  //     version    : 'v2.1'
-  //   });
-  // };
-
-  // (function(d, s, id){
-  //    var js, fjs = d.getElementsByTagName(s)[0];
-  //    if (d.getElementById(id)) {return;}
-  //    js = d.createElement(s); js.id = id;
-  //    js.src = "//connect.facebook.net/en_US/sdk.js";
-  //    fjs.parentNode.insertBefore(js, fjs);
-  //  }(document, 'script', 'facebook-jssdk'));
-// </script>
-
-  <div class="fixed">
-    <nav class="top-bar" data-topbar role="navigation">
-      <ul class="title-area">
-        <li class="name">
+    <div class="fixed">
+      <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name">
+              
+            <h1 >
+              <%= link_to 'Map me', root_url, :id => 'app-logo'%>
+              <i class="fa fa-map-marker"></i>
+              <!--  -->
+            </h1>
             
-          <h1 >
-            <%= link_to 'Map me', root_url, :id => 'app-logo'%>
-            <i class="fa fa-map-marker"></i>
-            <!--  -->
-          </h1>
-          
-        </li>
-         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-      </ul>
-    </nav>
-  </div>
+          </li>
+           <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+      </nav>
+    </div>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
@@ -58,16 +38,6 @@
     <% end %>
 
       <%= yield %>
-  <script type="text/javascript">
-      (function() {
-       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-       po.src = 'https://apis.google.com/js/client:plusone.js';
-       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-     })();
-  </script>
-  
-  <script src="http://platform.twitter.com/anywhere.js?id=#{Figaro.env.twitter_key}&v=1" type="text/javascript"></script>
- 
     <%= javascript_include_tag "application" %>
   </body>
 </html>
