@@ -17,18 +17,12 @@ class User < ActiveRecord::Base
 	end
 
   def auth_client
-    if provider == "twitter"
-      @client = Twitter::REST::Client.new do |config|
-        configure_tokens(config)    
-      end 
-    end        
-  end
-
-  def configure_tokens(config)
-    config.consumer_key = ENV["#{provider.upcase}_KEY"]
-    config.consumer_secret = ENV["#{provider.upcase}_SECRET"]
-    config.access_token = self.oauth_token
-    config.access_token_secret = self.oauth_secret
+    @client = Twitter::REST::Client.new do |config|
+      config.consumer_key = ENV["TWITTER_KEY"]
+      config.consumer_secret = ENV["TWITTER_SECRET"]
+      config.access_token = self.oauth_token
+      config.access_token_secret = self.oauth_secret
+    end       
   end
 
   def get_followers
